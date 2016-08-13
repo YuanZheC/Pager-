@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>理解关键部分</title>
+</head>
+<body>
+	<p>	// 点击第6页 
+		临时中间页码 = 5(动态) - Math.floor(10/2) + 1;	// 根据中间值 来求两端的值
+		终止页码 = Math.min(25,Math.max(0,临时中间页码)+10)-1
+		起始页码 = Math.max(0,终止页码 - 10 + 1)
+	</p>
+</body>
+</html>

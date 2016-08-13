@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>page2.0 正式版</title>
+	<style>
+		.pager {
+			width: 100%;
+		}
+	</style>
+	<link rel="stylesheet" href="./page2.0.css">
+	<script src="./jquery-1.12.1.min.js"></script>
+	<script src="./page2.0.js"></script>
+</head>
+<body>
+
+	
+
+	<div class="pager" id="page3"></div>
+	<div class="pager" id="pager4"></div>
+	<div class="pager" id="pager5"></div>
+	<div class="pager" id="pager6"></div>
+	<div class="pager" id="pager7"></div>
+	<!-- <div class="one">配置项没有实现独立</div> -->
+	<script>
+		var config = {
+			pageIndex: 0,	// 应该是页码索引
+			start: 0,	// 起始值
+			limit: 2,	// 限制值
+			totalCount: 13, // == itemCount
+			maxButtonCount: 2,
+			prevText: '上一页',
+			nextText: '下一页',
+			FirstEnd: false,
+			midBtn: false,
+			go: true,
+			callback: function(start){console.log("11 strat " +start);
+				return false;}
+		};
+
+		var config1 = {
+			pageIndex: 0,	// 应该是页码索引
+			start: 0,
+			limit: 2,	
+			totalCount: 15, // == itemCount
+			maxButtonCount: 4,
+			prevText: '上一页',
+			nextText: '下一页',
+			FirstEnd: true,
+			midBtn: true,
+			go: true,
+			callback: function(start){console.log("22 start " + start);
+				return false;}
+		}
+
+		var config2 = {
+			pageIndex: 0,	// 应该是页码索引
+			start: 0,
+			limit: 2,	
+			totalCount: 10, // == itemCount
+			maxButtonCount: 7,
+			prevText: '上一页',
+			nextText: '下一页',
+			FirstEnd: false,
+			midBtn: true,
+			go: true,
+			callback: function(start){console.log("33 start " + start);
+				return false;}
+		}
+
+		var config3 = {
+			pageIndex: 0,	// 应该是页码索引
+			start: 0,
+			limit: 2,	
+			totalCount: 50, // == itemCount
+			maxButtonCount: 10,
+			prevText: '上一页',
+			nextText: '下一页',
+			FirstEnd: false,
+			midBtn: true,
+			go: false,
+			callback: function(start){console.log("44 start " + start);
+				return false;}
+		}
+		var config4 = {
+			pageIndex: 0,	// 应该是页码索引
+			start: 0,
+			limit: 2,	
+			totalCount: 14, // == itemCount
+			maxButtonCount: 10,
+			prevText: '上一页',
+			nextText: '下一页',
+			FirstEnd: true,
+			midBtn: true,
+			go: false,
+			callback: function(start){console.log("55 start " + start);
+				return false;}
+		}
+		// 第一个容器
+		$("#page3").pager(config);
+		// 第二个容器
+		$("#pager4").pager(config1);
+		$("#pager5").pager(config2);
+		$("#pager6").pager(config3);
+		$("#pager7").pager(config4);
+/*var defaults = {
+	pageIndex: 0,
+	start: 0,
+	limit: 6,
+	totalCount: 30,
+	preText: '上一页',
+	nexText: '下一页',
+	FirstEnd: true,
+	callback: function(){alert("没有回调");return false;}
+};
+*/
+	/*function Pager($ele,options) {
+		this.$ele = $ele;
+		this.options = options = $.extend(defaults, options || {});
+		this.init();
+	}
+	Pager.prototype = {
+		constructor: Pager,
+		init: function(){
+			this.renderHtml();
+			//this.bindEvent();
+		},
+		renderHtml: function(){
+			var options = this.options;
+			console.log(options)
+		}
+	};
+
+	var o = new Pager();
+	o.renderHtml();
+
+	var html = [];
+	true?(html.push('<a>safsfa</a>')):"";
+	console.log(html)*/
+	</script>
+</body>
+</html>
+<!-- 测试样式用  
+<div id="test">
+		<div class="pager" id="page3">
+			<a page="8" href="javascript:;" class="flip">上一页</a>
+			<a href="javascript:;" page="0">1</a> 
+			<span>...</span>
+			<a page="3" href="javascript:;">4</a>
+			<a page="4" href="javascript:;">5</a>
+			<a page="5" href="javascript:;">6</a>
+			<a page="6" href="javascript:;">7</a>
+			<a page="7" href="javascript:;">8</a>
+			<a page="8" href="javascript:;">9</a>
+			<span class="curPage">10</span>
+			<span class="flip noPage">下一页</span>
+			<span class="page-text">跳转到第</span><input class="page-ipt" type="text"><span class="page-text">页</span><a href="javascript:;" class="page-go">GO</a><span class="page-text">共有13页</span>
+		</div>
+	</div> -->
